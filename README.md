@@ -18,14 +18,12 @@ You can install this package into your preferred Python environment using pip:
 $ pip install pyospackage_mchiarag
 ```
 
-TODO: Add a brief example of how to use the package to this section
-
 To use pyospackage_mchiarag in your code:
 
 ```python
->>> import pyospackage_mchiarag
->>> pyospackage_mchiarag.hello_world()
-```
+>>> from pyospackage_mchiarag.matcher import match_pokemon, pick_pokemon
+
+>>> pick_pokemon()
 
 ## Copyright
 
