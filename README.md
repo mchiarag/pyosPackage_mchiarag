@@ -8,7 +8,7 @@
 *TODO: the above badges that indicate python version and package version will only work if your package is on PyPI.
 If you don't plan to publish to PyPI, you can remove them.*
 
-pyosPackage_mchiarag is a project that (describe what it does here).
+pyosPackage_mchiarag is a project that assigns you to your Pokémon based on a word you choose.
 
 ## Get started
 
