@@ -20,7 +20,17 @@ def get_available_words():
 
 
 def match_pokemon(word):
-    """Match a personality word to a Pokémon."""
+    """Match a personality word to a Pokémon.
+
+    Raises
+    ------
+    TypeError
+        If `word` is not a string.
+    """
+    if not isinstance(word, str):
+        raise TypeError(
+            f"match_pokemon expects a string, got {type(word).__name__}"
+        )
     return POKEMON_MAP.get(word.strip().lower())
 
 

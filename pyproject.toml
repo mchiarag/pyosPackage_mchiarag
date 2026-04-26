@@ -99,6 +99,7 @@ source = [
 ]
 
 [tool.coverage.run]
+source_pkgs = ["pyospackage_mchiarag"]
 # Ensures code coverage is measured for branches (conditional statements with different outcomes) in your code.
 branch = true
 parallel = true
@@ -145,7 +146,7 @@ dependency-groups = [
 python = ["3.11", "3.12", "3.13"]
 
 [tool.hatch.envs.test.scripts]
-run = "pytest {args:--cov=pyospackage_mchiarag --cov-report=term-missing --cov-report=xml}"
+run = "pytest {args:--cov --cov-report=term-missing --cov-report=xml}"
 
 #--------------- Build and preview your documentation ---------------#
 

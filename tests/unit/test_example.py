@@ -7,6 +7,7 @@ is up to you. This test example provides tests for the matcher.py module.
 """
 
 from pyospackage_mchiarag.matcher import match_pokemon, get_available_words
+import pytest
 
 
 def test_match_pokemon_known_word():
@@ -48,3 +49,13 @@ def test_match_pokemon_raises_on_list():
     """match_pokemon should raise TypeError when given a list."""
     with pytest.raises(TypeError, match="expects a string"):
         match_pokemon(["brave"])
+
+
+import pytest
+
+
+@pytest.mark.parametrize("bad_input", [None, 42, 3.14, [], {}, ("brave",), True])
+def test_non_string_inputs_raise_typeerror(bad_input):
+    """Any non-string input should raise TypeError."""
+    with pytest.raises(TypeError):
+        match_pokemon(bad_input)
