@@ -30,3 +30,21 @@ def test_ten_words_available():
     """Test that there are exactly 10 personality words to choose from."""
     words = get_available_words()
     assert len(words) == 10, f"Expected 10 words but got {len(words)}"
+
+
+def test_match_pokemon_raises_on_none():
+    """match_pokemon should raise TypeError when given None."""
+    with pytest.raises(TypeError, match="expects a string"):
+        match_pokemon(None)
+
+
+def test_match_pokemon_raises_on_integer():
+    """match_pokemon should raise TypeError when given an integer."""
+    with pytest.raises(TypeError, match="expects a string"):
+        match_pokemon(42)
+
+
+def test_match_pokemon_raises_on_list():
+    """match_pokemon should raise TypeError when given a list."""
+    with pytest.raises(TypeError, match="expects a string"):
+        match_pokemon(["brave"])
